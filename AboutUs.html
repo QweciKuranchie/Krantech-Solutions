@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    // Ensure dark mode is applied before CSS loads to prevent FOUC
+    if (localStorage.getItem('krantech-dark-mode') === 'true') {
+      document.documentElement.classList.add('dark-mode');
+      try {
+        document.body.classList.add('dark-mode');
+      } catch(e) {}
+    }
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - KranTech Solutions</title>
+  <link rel="stylesheet" href="Assets/css/index.css" />
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Assets/Img/Favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Assets/Img/Favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Assets/Img/Favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"> 
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo-container">
+        <img src="Assets/Img/Logo/krantech solution logo(half).png" alt="KranTech Logo" class="logo-img" width="50" height="50" />
+        <div class="logo-text">
+          <h1>KRANTECH</h1>
+          <span>SOLUTIONS</span>
+        </div>
+      </div>
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="AboutUs.html">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <!-- Dark Mode Toggle Button -->
+      <button id="darkModeToggle" aria-label="Toggle dark mode" style="background:none;border:none;cursor:pointer;font-size:22px;margin-left:18px;outline:none;">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About KranTech Solutions</h2>
+          <p>Founded in 2025, KranTech Solutions is dedicated to delivering innovative technology solutions to businesses of all sizes. Our team of certified professionals brings together expertise across multiple technology domains.</p>
+          <p>We believe in building long-term partnerships with our clients, understanding their unique challenges, and delivering solutions that drive real business value.</p>
+          <p>Our approach combines technical excellence with business acumen to ensure that every solution we deliver contributes directly to your bottom line.</p>
+        </div>
+        <!-- ...About image -->
+         <div class="about-image">
+          <img src="Assets/Img/krantech solution logo.png" alt="KranTech Solutions" style="width:100%;height:auto;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.1);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team Section -->
+  <section class="our-team" id="our-team" style="background:#f5f7fa;padding:60px 0;">
+    <div class="container">
+      <div class="section-title" style="text-align:center;margin-bottom:40px;">
+        <h2>Our Team</h2>
+        <p>Meet the professionals behind KranTech Solutions</p>
+      </div>
+      <div class="team-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;max-width:900px;margin:0 auto;">
+        <div class="team-member" style="background:white;padding:32px 20px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.06);text-align:center;">
+          <img src="Assets/Img/Our Team/kuranchie.jpg" alt="Richard Nuhu" style="width: 100%; height: auto; object-fit: cover; margin-bottom: 18px;" />
+          <h3 style="margin-bottom:6px;">Richard Nuhu</h3>
+          <p style="color:var(--primary);font-weight:500;margin-bottom:8px;">CEO & Full-Stack Developer</p>
+        </div>
+        <div class="team-member" style="background:white;padding:32px 20px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.06);text-align:center;">
+          <img src="Assets/Img/Our Team/Paa Kwesi.jpg" alt="Philip Odame" style="width: 100%; height: auto; object-fit: cover; margin-bottom: 18px;" />
+          <h3 style="margin-bottom:6px;">Philip Odame</h3>
+          <p style="color:var(--primary);font-weight:500;margin-bottom:8px;">Graphic Designer & Full-Stack Developer</p>
+        </div>
+        <div class="team-member" style="background:white;padding:32px 20px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.06);text-align:center;">
+          <img src="Assets/Img/Our Team/Miguel.jpg" alt="Miguel Ligi Oppong" style="width: 100%; height: auto; object-fit: cover; margin-bottom: 18px;" />
+          <h3 style="margin-bottom:6px;">Miguel Oppong Ligi</h3>
+          <p style="color:var(--primary);font-weight:500;margin-bottom:8px;">Virtual Assistant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ...existing code... -->
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="logo-container">
+            <img src="Assets/Img/Logo/krantech solution logo(half).png" alt="KranTech Logo" class="logo-img" width="50" height="50" />
+            <div class="logo-text">
+              <h1 style="color: white; font-size: 20px">KRANTECH</h1>
+              <span style="color: #bbb">SOLUTIONS</span>
+            </div>
+          </div>
+          <p style="margin-top: 15px; color: #bbb">Innovative technology solutions for the digital age.</p>
+          <div class="social-links" style="margin-top: 20px">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="Pages/Website and app.html">Website and App Development</a></li>
+            <li><a href="Pages/Graphic Design.html">Graphic Design</a></li>
+            <li><a href="Pages/Computer services.html">Computer Services</a></li>
+            <li><a href="Pages/Virtual Assistance.html">Virtual Assistance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="AboutUs.html">Our Team</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Testimonials</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 KranTech Solutions. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Back to Top Button -->
+  <button id="backToTop" style="display:none;position:fixed;bottom:30px;right:30px;z-index:999;background:var(--primary);color:#fff;border:none;border-radius:50%;width:50px;height:50px;font-size:24px;box-shadow:0 2px 8px rgba(0,0,0,0.2);cursor:pointer;">&#8679;</button>
+  <script>
+    // Back to Top Button logic
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <script src="Assets/js/AboutUs.js"></script>
+   
+  </script>
+</body>
+</html>
