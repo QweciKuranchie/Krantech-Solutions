@@ -13,6 +13,28 @@
     }
 }
 
+
+@media (max-width: 900px) {
+    .header-container {
+        padding: 10px 8px;
+        min-height: 48px;
+    }
+    .logo-img {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    .logo-text h1 {
+        font-size: 18px !important;
+    }
+    .banner-slider, .banner, .banner img {
+        height: 320px;
+        max-height: 320px;
+    }
+    .hero {
+        min-height: 320px;
+    }
+}
+
 @media (max-width: 768px) {
     .header-container {
         padding: 8px 4px;
@@ -22,7 +44,7 @@
         position: fixed;
         top: 0;
         right: -260px;
-        width: 240px;
+        width: 220px;
         height: 100vh;
         background-color: var(--bg);
         flex-direction: column;
@@ -72,26 +94,63 @@
         font-size: 14px;
     }
     .about-content,
-    .contact-container {
-        grid-template-columns: 1fr;
+    .contact-container,
+    .footer-container,
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
     }
     .about-image {
         order: -1;
+        margin-bottom: 24px;
     }
-    /* Overlay for nav drawer */
-    .nav-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0,0,0,0.18);
-        z-index: 199;
-        transition: opacity 0.3s;
+    .why-choose-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
     }
-    .nav-overlay.active {
-        display: block;
+    .testimonials-slider-wrapper {
+        max-width: 98vw !important;
+        padding: 0 2vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner-slider, .banner, .banner img {
+        height: 180px;
+        max-height: 180px;
+    }
+    .hero {
+        min-height: 180px;
+    }
+    .section-title h2 {
+        font-size: 22px;
+    }
+    .service-card, .why-card, .testimonial-slide, .counter-box {
+        padding: 16px 8px !important;
+        font-size: 15px;
+    }
+    .service-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 22px;
+        margin: 16px auto 10px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+    .footer-col h3 {
+        font-size: 15px;
+    }
+    .logo-img {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .logo-text h1 {
+        font-size: 12px !important;
+    }
+    .copyright {
+        font-size: 12px;
     }
 }
 
