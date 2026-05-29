@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | KranTech Solutions</title>
   <script>
     // Ensure dark mode is applied before CSS loads to prevent FOUC
     if (localStorage.getItem('krantech-dark-mode') === 'true') {
@@ -43,7 +46,7 @@
         <i class="fas fa-bars"></i>
       </div>
       <!-- Dark Mode Toggle Button -->
-      <button id="darkModeToggle" aria-label="Toggle dark mode" style="background:none;border:none;cursor:pointer;font-size:22px;margin-left:18px;outline:none;">
+      <button id="darkModeToggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
       </button>
     </div>
@@ -57,43 +60,36 @@
           <p>We believe in building long-term partnerships with our clients, understanding their unique challenges, and delivering solutions that drive real business value.</p>
           <p>Our approach combines technical excellence with business acumen to ensure that every solution we deliver contributes directly to your bottom line.</p>
         </div>
-        <!-- ...About image -->
          <div class="about-image">
-          <img src="Assets/Img/krantech solution logo.png" alt="KranTech Solutions" style="width:100%;height:auto;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.1);" />
+          <img src="Assets/Img/krantech solution logo.png" alt="KranTech Solutions" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- Our Team Section -->
-  <section class="our-team" id="our-team" style="background:#f5f7fa;padding:60px 0;">
+  <section class="our-team" id="our-team">
     <div class="container">
-      <div class="section-title" style="text-align:center;margin-bottom:40px;">
+      <div class="section-title">
         <h2>Our Team</h2>
         <p>Meet the professionals behind KranTech Solutions</p>
       </div>
-      <div class="team-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;max-width:900px;margin:0 auto;">
-        <div class="team-member" style="background:white;padding:32px 20px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.06);text-align:center;">
-          <img src="Assets/Img/Our Team/kuranchie.jpg" alt="Richard Nuhu" style="width: 100%; height: auto; object-fit: cover; margin-bottom: 18px;" />
-          <h3 style="margin-bottom:6px;">Richard Nuhu</h3>
-          <p style="color:var(--primary);font-weight:500;margin-bottom:8px;">CEO & Full-Stack Developer</p>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="Assets/Img/Our Team/kuranchie.jpg" alt="Richard Nuhu" />
+          <h3>Richard Nuhu</h3>
+          <p>CEO & Full-Stack Developer</p>
         </div>
-        <div class="team-member" style="background:white;padding:32px 20px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.06);text-align:center;">
-          <img src="Assets/Img/Our Team/Paa Kwesi.jpg" alt="Philip Odame" style="width: 100%; height: auto; object-fit: cover; margin-bottom: 18px;" />
-          <h3 style="margin-bottom:6px;">Philip Odame</h3>
-          <p style="color:var(--primary);font-weight:500;margin-bottom:8px;">Graphic Designer & Full-Stack Developer</p>
+        <div class="team-member">
+          <img src="Assets/Img/Our Team/Paa Kwesi.jpg" alt="Philip Odame" />
+          <h3>Philip Odame</h3>
+          <p>Graphic Designer & Full-Stack Developer</p>
         </div>
-        <div class="team-member" style="background:white;padding:32px 20px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.06);text-align:center;">
-          <img src="Assets/Img/Our Team/Miguel.jpg" alt="Miguel Ligi Oppong" style="width: 100%; height: auto; object-fit: cover; margin-bottom: 18px;" />
-          <h3 style="margin-bottom:6px;">Miguel Oppong Ligi</h3>
-          <p style="color:var(--primary);font-weight:500;margin-bottom:8px;">Virtual Assistant</p>
+        <div class="team-member">
+          <img src="Assets/Img/Our Team/Miguel.jpg" alt="Miguel Oppong Ligi" />
+          <h3>Miguel Oppong Ligi</h3>
+          <p>Virtual Assistant</p>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- ...existing code... -->
-        </div>
-        
       </div>
     </div>
   </section>
@@ -104,16 +100,16 @@
           <div class="logo-container">
             <img src="Assets/Img/Logo/krantech solution logo(half).png" alt="KranTech Logo" class="logo-img" width="50" height="50" />
             <div class="logo-text">
-              <span class="logo-title" style="color: white; font-size: 20px; font-weight: 700; display: block;">KRANTECH</span>
-              <span style="color: #bbb">SOLUTIONS</span>
+              <span class="logo-title">KRANTECH</span>
+              <span>SOLUTIONS</span>
             </div>
           </div>
-          <p style="margin-top: 15px; color: #bbb">Innovative technology solutions for the digital age.</p>
-          <div class="social-links" style="margin-top: 20px">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+          <p>Innovative technology solutions for the digital age.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         <div class="footer-col">
@@ -123,6 +119,8 @@
             <li><a href="Pages/Graphic Design.html">Graphic Design</a></li>
             <li><a href="Pages/Computer services.html">Computer Services</a></li>
             <li><a href="Pages/Virtual Assistance.html">Virtual Assistance</a></li>
+            <li><a href="Pages/Product Management.html">Product Management</a></li>
+            <li><a href="Pages/Cloud Solutions.html">Cloud Solutions</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -152,7 +150,7 @@
     </div>
   </footer>
   <!-- Back to Top Button -->
-  <button id="backToTop" style="display:none;position:fixed;bottom:30px;right:30px;z-index:999;background:var(--primary);color:#fff;border:none;border-radius:50%;width:50px;height:50px;font-size:24px;box-shadow:0 2px 8px rgba(0,0,0,0.2);cursor:pointer;">&#8679;</button>
+  <button id="backToTop" aria-label="Back to top">&#8679;</button>
   <script>
     // Back to Top Button logic
     const backToTop = document.getElementById('backToTop');

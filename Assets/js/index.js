@@ -44,6 +44,8 @@ if (mobileMenu && nav) {
       const banners = document.querySelectorAll('#banner-slider .banner');
       const prevBtn = document.querySelector('.banner-prev');
       const nextBtn = document.querySelector('.banner-next');
+      if (banners.length === 0) return;
+      
       let current = 0;
       let timer;
       function showSlide(idx) {
@@ -57,45 +59,65 @@ if (mobileMenu && nav) {
         current = (current - 1 + banners.length) % banners.length;
         showSlide(current);
       }
-      nextBtn.addEventListener('click', function() {
-        nextSlide();
-        resetTimer();
-      });
-      prevBtn.addEventListener('click', function() {
-        prevSlide();
-        resetTimer();
-      });
-      function resetTimer() {
-        clearInterval(timer);
+      
+      if (nextBtn && prevBtn && banners.length > 1) {
+        nextBtn.addEventListener('click', function() {
+          nextSlide();
+          resetTimer();
+        });
+        prevBtn.addEventListener('click', function() {
+          prevSlide();
+          resetTimer();
+        });
+        function resetTimer() {
+          clearInterval(timer);
+          timer = setInterval(nextSlide, 6000);
+        }
         timer = setInterval(nextSlide, 6000);
       }
-      timer = setInterval(nextSlide, 6000);
       showSlide(current);
     })();
 
     // Contact form validation and feedback
-    document.querySelector(".contact-form form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      var name = document.getElementById("name").value.trim();
-      var email = document.getElementById("email").value.trim();
-      var message = document.getElementById("message").value.trim();
-      var msgDiv = document.getElementById("form-message");
-      if (!name || !email || !message) {
-        msgDiv.style.color = "#e53935";
-        msgDiv.textContent = "Please fill in all required fields.";
-        return;
+    const contactForm = document.querySelector(".contact-form form");
+    if (contactForm) {
+      contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var message = document.getElementById("message").value.trim();
+        var msgDiv = document.getElementById("form-message");
+        if (!name || !email || !message) {
+          msgDiv.style.color = "#e53935";
+          msgDiv.textContent = "Please fill in all required fields.";
+          return;
+        }
+        // Simple email validation
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          msgDiv.style.color = "#e53935";
+          msgDiv.textContent = "Please enter a valid email address.";
+          return;
+        }
+        msgDiv.style.color = "#43a047";
+        msgDiv.textContent = "Thank you for contacting us, " + name + "! We will get back to you soon.";
+        this.reset();
+      });
+    }
+
+// Generic scroll reveal observer for premium buttery-smooth section entrances
+const revealSections = document.querySelectorAll('.testimonials, .counters, .services, .about, .why-choose-us, .contact, .our-team, .projects, .testimonials-fluid');
+if (revealSections.length > 0) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in-section');
+        observer.unobserve(entry.target);
       }
-      // Simple email validation
-      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(email)) {
-        msgDiv.style.color = "#e53935";
-        msgDiv.textContent = "Please enter a valid email address.";
-        return;
-      }
-      msgDiv.style.color = "#43a047";
-      msgDiv.textContent = "Thank you for contacting us, " + name + "! We will get back to you soon.";
-      this.reset();
     });
+  }, { threshold: 0.12 });
+  revealSections.forEach(section => revealObserver.observe(section));
+}
 
 // Animated Counters (with fade-in on scroll)
 const counterSection = document.querySelector('.counters');
@@ -196,43 +218,49 @@ if (testimonialsSection) {
   showTestimonial(currentSlide);
 }
 // Back to Top Button
-const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 300) {
-    backToTop.style.display = 'block';
-  } else {
-    backToTop.style.display = 'none';
+{
+  const backToTopBtn = document.getElementById('backToTop');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
-});
-backToTop.addEventListener('click', function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+}
 
 // Dark mode toggle logic (single handler, persistent)
-const darkModeToggle = document.getElementById('darkModeToggle');
-if (darkModeToggle) {
-  // Restore mode on load
-  if (localStorage.getItem('krantech-dark-mode') === 'true') {
-    document.body.classList.add('dark-mode');
-    const icon = darkModeToggle.querySelector('i');
-    if (icon) {
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
+{
+  const darkModeToggleBtn = document.getElementById('darkModeToggle');
+  if (darkModeToggleBtn) {
+    // Restore mode on load
+    if (localStorage.getItem('krantech-dark-mode') === 'true') {
+      document.body.classList.add('dark-mode');
+      const icon = darkModeToggleBtn.querySelector('i');
+      if (icon) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
     }
+    darkModeToggleBtn.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      const icon = this.querySelector('i');
+      if (document.body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('krantech-dark-mode', 'true');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('krantech-dark-mode', 'false');
+      }
+    });
   }
-  darkModeToggle.addEventListener('click', function() {
-    document.body.classList.toggle('dark-mode');
-    const icon = this.querySelector('i');
-    if (document.body.classList.contains('dark-mode')) {
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-      localStorage.setItem('krantech-dark-mode', 'true');
-    } else {
-      icon.classList.remove('fa-sun');
-      icon.classList.add('fa-moon');
-      localStorage.setItem('krantech-dark-mode', 'false');
-    }
-  });
 }
 
 // Header shrink on scroll
